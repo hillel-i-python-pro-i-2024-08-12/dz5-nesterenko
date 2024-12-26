@@ -1,0 +1,12 @@
+#найпростіший консольний додаток
+
+## Build
+bash
+
+docker build -t console-app .
+docker run --rm console-app
+
+## Docker compose
+terminal
+
+docker compose up
