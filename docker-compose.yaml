@@ -2,23 +2,23 @@ version: '3.12'
 services:
   api:
     build:
-      context: .  # Указываем путь к папке с Dockerfile для "api"
+      context: .  
       dockerfile: Dockerfile
     container_name: basic_app
     ports:
-      - "3001:3000"  # Проброс порта
+      - "3001:3000" 
     volumes:
-      - .:/app   # Подключение локальной папки dz5 как /app в контейнере
-    restart: unless-stopped # Автоматический рестарт при сбоях
-    working_dir: /app       # Указываем рабочую директорию
-    command: python app.py  # Выполняем команду запуска
+      - .:/app   
+    restart: unless-stopped 
+    working_dir: /app       
+    command: python app.py  
 
   console-app:
     build:
-      context: .  # Путь к текущей директории для сборки "console-app"
+      context: . 
       dockerfile: Dockerfile
     image: console-app:latest
     container_name: console-app
     command: python app.py
     working_dir: /app
-    restart: unless-stopped # Автоматический рестарт
+    restart: unless-stopped
